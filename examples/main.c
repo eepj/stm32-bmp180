@@ -114,7 +114,7 @@ int main(void)
 	/* Reads pressure. */
 	int32_t pressure = BMP180_GetPressure();
 	char buffer[100];
-	sprintf(buffer, "Temperature: %d.%d°C\nPressure: %d Pa", (int)temperature / 10, (int)temperature % 10, (int)pressure);
+	sprintf(buffer, "Temperature: %d.%d deg C\nPressure: %d Pa", (int)temperature / 10, (int)temperature % 10, (int)pressure);
 	HAL_UART_Transmit(&huart1, (uint8_t) buffer, strlen(buffer), 1000);
     /* USER CODE END WHILE */
 
