@@ -99,23 +99,23 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
   /* Initializes BMP180 sensor and oversampling settings. */
-	BMP180_Init(&hi2c1, BMP180_LOW);
+  BMP180_Init(&hi2c1, BMP180_LOW);
   /* Update calibration data. Must be called once before entering main loop. */
-	BMP180_UpdateCalibrationData();
+  BMP180_UpdateCalibrationData();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	while (1) {
-		/* Reads temperature. */
-		int32_t temperature = BMP180_GetRawTemperature();
-		/* Alternatively, if you want a floating point number, you can call: */
-		//float temperature = BMP180_GetTemperature();
-		/* Reads pressure. */
-		int32_t pressure = BMP180_GetPressure();
-		char buffer[100];
-		sprintf(buffer, "Temperature: %d.%d°C\nPressure: %d Pa", (int)temperature / 10, (int)temperature % 10, (int)pressure);
-		HAL_UART_Transmit(&huart1, (uint8_t) buffer, strlen(buffer), 1000);
+  while (1) {
+	/* Reads temperature. */
+	int32_t temperature = BMP180_GetRawTemperature();
+	/* Alternatively, if you want a floating point number, you can call: */
+	//float temperature = BMP180_GetTemperature();
+	/* Reads pressure. */
+	int32_t pressure = BMP180_GetPressure();
+	char buffer[100];
+	sprintf(buffer, "Temperature: %d.%d°C\nPressure: %d Pa", (int)temperature / 10, (int)temperature % 10, (int)pressure);
+	HAL_UART_Transmit(&huart1, (uint8_t) buffer, strlen(buffer), 1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
