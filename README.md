@@ -5,7 +5,7 @@ An STM32 HAL library written for the BMP180 temperature/pressure sensor.
 * Minimal setup:
 ```
                                              _________
-                                    VDD 1 --|         |
+                                    VDD 1 --|      O  |
                                     GND 2 --|      _  |
                                    SCL1 3 --|     |_| |
                                    SDA1 4 --|_________|
