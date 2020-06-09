@@ -15,6 +15,3 @@ An STM32 HAL library written for the BMP180 temperature/pressure sensor.
 * Complie and flash [`main.c`](./examples/main.c) in [`./examples`](./examples) to microcontroller.
 * Read the results from a UART monitor.
 * Refer to [datasheets](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi23vToqPLpAhUDZt4KHTPUA-sQFjAAegQIBBAB&url=https%3A%2F%2Fcdn-shop.adafruit.com%2Fdatasheets%2FBST-BMP180-DS000-09.pdf&usg=AOvVaw2GVPbzAj6_NxVb-N7lcGQe) for further information.
-
-## Known issues
-* `void BMP180_SoftReset();` causes the sensor to malfunction. Issue under investigation.
