@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 
+/* Section 3.5 of datasheet. */
 short AC1 = 408, AC2 = -72, AC3= -14383;
 unsigned short AC4 = 32741, AC5 = 32757, AC6 = 23153;
 short B1 = 6190, B2 = 4, MB = -32768, MC = -8711, MD = 2868;
