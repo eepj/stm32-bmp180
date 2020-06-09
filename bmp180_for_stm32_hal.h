@@ -2,6 +2,7 @@
 /* Library by @eepj www.github.com/eepj */
 #ifndef BMP180_FOR_STM32_HAL_H
 #define BMP180_FOR_STM32_HAL_H
+
 #include "main.h"
 #include "math.h"
 
@@ -62,6 +63,8 @@ void BMP180_Init(I2C_HandleTypeDef *hi2c);
 
 void BMP180_SetOversampling(BMP180_OSS oss);
 
+void BMP180_SoftReset(void);
+
 void BMP180_UpdateCalibrationData(void);
 
 void BMP180_WriteReg(uint8_t reg, uint8_t cmd);
@@ -71,5 +74,8 @@ int32_t BMP180_GetRawTemperature(void);
 int32_t BMP180_GetPressure(void);
 
 float BMP180_GetTemperature(void);
+
+int32_t BMP180_GetUT(void);
+int32_t BMP180_GetUP(void);
 
 #endif
