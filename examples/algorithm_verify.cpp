@@ -9,7 +9,7 @@ unsigned short AC4 = 32741, AC5 = 32757, AC6 = 23153;
 short B1 = 6190, B2 = 4, MB = -32768, MC = -8711, MD = 2868;
 int oss = 0;
 
-void t(void){
+void verify(void){
 	long ut = 27898;
 	cout << "ut: " << ut << endl;
 	long up = 23843;
@@ -57,6 +57,6 @@ void t(void){
 }
 
 int main(int argc, char** argv) {
-	t();
+	verify();
 	return 0;
 }
