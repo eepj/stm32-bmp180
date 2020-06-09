@@ -2,7 +2,6 @@
 #include <math.h>
 #include <string>
 using namespace std;
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 short AC1 = 408, AC2 = -72, AC3= -14383;
 unsigned short AC4 = 32741, AC5 = 32757, AC6 = 23153;
