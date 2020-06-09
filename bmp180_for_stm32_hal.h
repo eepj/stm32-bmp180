@@ -62,8 +62,6 @@ void BMP180_Init(I2C_HandleTypeDef *hi2c);
 
 void BMP180_SetOversampling(BMP180_OSS oss);
 
-void BMP180_SoftReset(void);
-
 void BMP180_UpdateCalibrationData(void);
 
 void BMP180_WriteReg(uint8_t reg, uint8_t cmd);
