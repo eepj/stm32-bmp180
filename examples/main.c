@@ -24,7 +24,7 @@
  *
  *			Refer to datasheets for further information.
  *
- */
+*/
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
