@@ -107,10 +107,10 @@ float BMP180_GetTemperature(void) {
 int32_t BMP180_GetPressure(void) {
 	BMP180_WriteReg(BMP180_CONTROL_REG, BMP180_CMD_TEMP);
 	HAL_Delay(BMP180_DELAY_TEMP);
-	int32_t ut = (BMP180_ReadReg(BMP180_MSB_REG) << 8) | BMP180_ReadReg(BMP180_LSB_REG);
+	int32_t ut = BMP180_GetUT();
 	BMP180_WriteReg(BMP180_CONTROL_REG, BMP180_CMD_PRES[_bmp180_oss]);
 	HAL_Delay(BMP180_DELAY_PRES[_bmp180_oss]);
-	int32_t up = ((BMP180_ReadReg(BMP180_MSB_REG) << 16) | (BMP180_ReadReg(BMP180_LSB_REG) << 8) | BMP180_ReadReg(BMP180_XLSB_REG)) >> (8 - _bmp180_oss);
+	int32_t up = BMP180_GetUP();
 	int32_t x1 = (ut - _bmp180_eeprom.BMP180_AC6) * _bmp180_eeprom.BMP180_AC5 / pow(2, 15);
 	int32_t x2 = (_bmp180_eeprom.BMP180_MC * pow(2, 11)) / (x1 + _bmp180_eeprom.BMP180_MD);
 	int32_t b5 = x1 + x2;
@@ -135,6 +135,15 @@ int32_t BMP180_GetPressure(void) {
 	p = p + (x1 + x2 + 3791) / pow(2, 4);
 	return p;
 }
+
+int32_t BMP180_GetUT(void){
+	return (BMP180_ReadReg(BMP180_MSB_REG) << 8) | BMP180_ReadReg(BMP180_LSB_REG);
+}
+
+int32_t BMP180_GetUP(void){
+	return ((BMP180_ReadReg(BMP180_MSB_REG) << 16) | (BMP180_ReadReg(BMP180_LSB_REG) << 8) | BMP180_ReadReg(BMP180_XLSB_REG)) >> (8 - _bmp180_oss);
+}
+
 #ifdef __cplusplus
 }
 #endif
