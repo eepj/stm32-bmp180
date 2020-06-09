@@ -8,11 +8,11 @@ short AC1 = 408, AC2 = -72, AC3= -14383;
 unsigned short AC4 = 32741, AC5 = 32757, AC6 = 23153;
 short B1 = 6190, B2 = 4, MB = -32768, MC = -8711, MD = 2868;
 int oss = 0;
+long ut = 27898;
+long up = 23843;
 
 void verify(void){
-	long ut = 27898;
 	cout << "ut: " << ut << endl;
-	long up = 23843;
 	cout << "up: " << up << endl;
 	long x1 = (ut - AC6) * AC5 / pow(2, 15);
 	cout << "x1: " << x1 << endl;
