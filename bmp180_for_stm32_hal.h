@@ -67,4 +67,6 @@ void BMP180_MeasurePressure(void);
 int32_t BMP180_GetRawTemperature(void);
 int32_t BMP180_GetPressure(void);
 
+float BMP180_GetTemperature(void);
+
 #endif
