@@ -38,14 +38,6 @@ void BMP180_SetOversampling(BMP180_OSS oss) {
 }
 
 /**
- * @brief Performs a soft reset.
- * @note Oversampling settings must be reset after calling this function.
- */
-void BMP180_SoftReset(void) {
-	BMP180_WriteReg(BMP180_SOFT_RESET_REG, BMP180_SOFT_RESET);
-}
-
-/**
  * @brief Updates calibration data.
  * @note Must be called once before main loop.
  */
