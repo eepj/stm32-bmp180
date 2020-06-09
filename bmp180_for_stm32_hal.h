@@ -7,6 +7,11 @@
 #define BMP180_I2C_ADDR					0x77
 #define BMP180_I2C_TIMEOUT				1000
 #define BMP180_CONTROL_REG				0xf4
+#define BMP180_MSB_REG					0xf6
+#define BMP180_LSB_REG					0xf7
+#define BMP180_XLSB_REG					0xf8
+#define BMP180_SOFT_RESET_REG				0xe0
+#define BMP180_SOFT_RESET				0xb6
 
 typedef enum BMP180_OSS {
 	BMP180_LOW, BMP180_STANDARD, BMP180_HIGH, BMP180_ULTRA,
@@ -52,7 +57,9 @@ extern const uint8_t BMP180_DELAY_TEMP;
 extern const uint8_t BMP180_CMD_PRES[4];
 extern const uint8_t BMP180_DELAY_PRES[4];
 
-void BMP180_Init(I2C_HandleTypeDef *hi2c, BMP180_OSS oss);
+void BMP180_Init(I2C_HandleTypeDef *hi2c);
+
+void BMP180_SetOversampling(BMP180_OSS oss);
 
 void BMP180_SoftReset(void);
 
@@ -60,9 +67,6 @@ void BMP180_UpdateCalibrationData(void);
 
 void BMP180_WriteReg(uint8_t reg, uint8_t cmd);
 uint8_t BMP180_ReadReg(uint8_t reg);
-
-void BMP180_MeasureTemperature(void);
-void BMP180_MeasurePressure(void);
 
 int32_t BMP180_GetRawTemperature(void);
 int32_t BMP180_GetPressure(void);
