@@ -15,6 +15,16 @@
  *                        opensource.org/licenses/BSD-3-Clause
  *
  ******************************************************************************
+ * Minimal setup:
+ *                                           _________
+ *                                  VDD 1 --|      O  |
+ *                                  GND 2 --|      _  |
+ *                                 SCL1 3 --|     |_| |
+ *                                 SDA1 4 --|_________|
+ *
+ *			Refer to datasheets for further information.
+ *
+ */
  */
 /* USER CODE END Header */
 
