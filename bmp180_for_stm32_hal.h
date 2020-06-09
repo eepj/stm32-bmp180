@@ -3,6 +3,7 @@
 #ifndef BMP180_FOR_STM32_HAL_H
 #define BMP180_FOR_STM32_HAL_H
 #include "main.h"
+#include "math.h"
 
 #define BMP180_I2C_ADDR					0x77
 #define BMP180_I2C_TIMEOUT				1000
@@ -10,7 +11,7 @@
 #define BMP180_MSB_REG					0xf6
 #define BMP180_LSB_REG					0xf7
 #define BMP180_XLSB_REG					0xf8
-#define BMP180_SOFT_RESET_REG				0xe0
+#define BMP180_SOFT_RESET_REG			0xe0
 #define BMP180_SOFT_RESET				0xb6
 
 typedef enum BMP180_OSS {
