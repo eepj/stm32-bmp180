@@ -8,7 +8,8 @@ An STM32 HAL library written for the BMP180 temperature/pressure sensor.
                                     VDD 1 --|      O  |
                                     GND 2 --|      _  |
                                    SCL1 3 --|     |_| |
-                                   SDA1 4 --|_________|            
+                                   SDA1 4 --|_________|    
+                                   
  ```
 * In STM32CubeIDE, include [`bmp180_for_stm32_hal.h`](./bmp180_for_stm32_hal.h) and [`bmp180_for_stm32_hal.c`](./bmp180_for_stm32_hal.c).
 * Complie and flash [`main.c`](./examples/main.c) in [`./examples`](./examples) to microcontroller.
