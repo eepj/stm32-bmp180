@@ -1,6 +1,5 @@
 #include <iostream>
 #include <math.h>
-#include <string>
 using namespace std;
 
 /* Section 3.5 of datasheet. */
@@ -14,29 +13,29 @@ long up = 23843;
 void verify(void){
 	cout << "ut: " << ut << endl;
 	cout << "up: " << up << endl;
-	long x1 = (ut - AC6) * AC5 / pow(2, 15);
+	long x1 = (ut - AC6) * AC5 / (1 << 15);
 	cout << "x1: " << x1 << endl;
-	long x2 = (MC * pow(2, 11)) / (x1 + MD);
+	long x2 = (MC * (1 << 11)) / (x1 + MD);
 	cout << "x2: " << x2 << endl;
 	long b5 = x1 + x2;
 	cout << "b5: " << b5 << endl;
 	long b6 = b5 - 4000;
 	cout << "b6: " << b6 << endl;
-	x1 = (B2 * (b6 * b6 / pow(2, 12))) / pow(2, 11);
+	x1 = (B2 * (b6 * b6 / (1 << 12))) / (1 << 11);
 	cout << "x1: " << x1 << endl;
-	x2 = AC2 * b6 / pow(2, 11);
+	x2 = AC2 * b6 / (1 << 11);
 	cout << "x2: " << x2 << endl;
 	long x3 = x1 + x2;
 	cout << "x3: " << x3 << endl;
 	long b3 = (((AC1 * 4 + x3) << oss) + 2) / 4;
 	cout << "b3: " << b3 << endl;
-	x1 = AC3 * b6 / pow(2, 13);
+	x1 = AC3 * b6 / (1 << 13);
 	cout << "x1: " << x1 << endl;
-	x2 = (B1 * (b6 * b6 / pow(2, 12))) / pow(2, 16);
+	x2 = (B1 * (b6 * b6 / (1 << 12))) / (1 << 16);
 	cout << "x2: " << x2 << endl;
 	x3 = ((x1 + x2) + 2) / 4;
 	cout << "x3: " << x3 << endl;
-	unsigned long b4 = AC4 * (unsigned long) (x3 + 32768) / pow(2, 15);
+	unsigned long b4 = AC4 * (unsigned long) (x3 + 32768) / (1 << 15);
 	cout << "b4: " << b4 << endl;
 	unsigned long b7 = ((unsigned long) up - b3) * (50000 >> oss);
 	cout << "b7: " << b7 << endl;
@@ -46,13 +45,13 @@ void verify(void){
 	else
 		p = (b7 / b4) * 2;
 		cout << "p: " << p << endl;
-	x1 = (p / pow(2, 8)) * (p / pow(2, 8));
+	x1 = (p / (1 << 8)) * (p / (1 << 8));
 	cout << "x1: " << x1 << endl;
-	x1 = (x1 * 3038) / pow(2, 16);
+	x1 = (x1 * 3038) / (1 << 16);
 	cout << "x1: " << x1 << endl;
-	x2 = (-7357 * p) / pow(2, 16);
+	x2 = (-7357 * p) / (1 << 16);
 	cout << "x2: " << x2 << endl;
-	p = p + (x1 + x2 + 3791) / pow(2, 4);
+	p = p + (x1 + x2 + 3791) / (1 << 4);
 	cout << "p: " << p << endl;
 }
 

@@ -4,7 +4,6 @@
 #define BMP180_FOR_STM32_HAL_H
 
 #include "main.h"
-#include "math.h"
 
 #define BMP180_I2C_ADDR					0x77
 #define BMP180_I2C_TIMEOUT				1000
