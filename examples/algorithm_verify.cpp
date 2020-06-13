@@ -43,7 +43,7 @@ void verify(void){
 		p = (b7 * 2) / b4;
 	else
 		p = (b7 / b4) * 2;
-		cout << "p: " << p << endl;
+	cout << "p: " << p << endl;
 	x1 = (p / (1 << 8)) * (p / (1 << 8));
 	cout << "x1: " << x1 << endl;
 	x1 = (x1 * 3038) / (1 << 16);
